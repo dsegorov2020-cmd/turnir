@@ -20,10 +20,13 @@
   if (/^tyrnir-[a-z0-9-]{1,50}$/.test(id)) {
     document.title = "🏆 Турнир";
     var f = document.createElement("iframe");
-    f.src = EXEC + "?id=" + encodeURIComponent(id);
+    f.dataset.src = EXEC + "?id=" + encodeURIComponent(id);
     f.title = "Турнир";
     f.setAttribute("allow", "clipboard-write");
     document.body.appendChild(f);
+    var loader = document.createElement("script");
+    loader.src = "/embed-tournament.js";
+    document.body.appendChild(loader);
   } else {
     document.body.innerHTML = '<div class="nf">Такой страницы нет 🤷<br><br><a href="/">← На главную турнира</a></div>';
   }
