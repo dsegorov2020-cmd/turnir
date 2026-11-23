@@ -1,0 +1,11 @@
+:root{color-scheme:dark;font-family:system-ui,sans-serif;background:#160624;color:#fff}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;min-height:100svh;display:grid;place-items:center;padding:24px;
+background:radial-gradient(ellipse at 50% 20%,#3d1169 0%,#210841 47%,#130523 82%)}
+.placeholder{width:min(100%,480px);padding:36px 20px;text-align:center;border-radius:22px;border:1px solid #aa5df2;
+background:#240e3f;box-shadow:0 0 30px #9a34f437}
+.icon{display:block;font-size:44px}
+h1{margin:10px 0;font-size:clamp(28px,7vw,42px)}
+p{margin:0 0 24px;color:#ebdaf8;font-size:clamp(17px,4vw,20px)}
+a{display:inline-block;padding:10px 16px;border:1px solid #c891ff;border-radius:11px;color:#fff;text-decoration:none}
+a:hover,a:focus-visible{background:#56238c;outline:2px solid #f5dcff;outline-offset:3px}

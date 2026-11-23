@@ -2,7 +2,7 @@
   const script = document.currentScript;
   const frame = script.previousElementSibling;
   const page = new URL(frame.dataset.src);
-  page.searchParams.set("v", "16");
+  page.searchParams.set("v", "neon");
   try {
     const key = "turnir-site-visitor-v1";
     let visitor = localStorage.getItem(key);
