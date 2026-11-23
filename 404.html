@@ -11,8 +11,15 @@
   .nf{color:#fff;text-align:center;padding:60px 20px;font-size:20px}
   .nf a{color:#ffd23f;font-weight:700}
 </style>
+<link rel="stylesheet" href="/tournament-loading.css">
 </head>
 <body>
+<template id="embed-status-template">
+<main id="embed-status" class="embed-status">
+  <p id="embed-message" role="status">Загружаем турнир…</p>
+  <a id="embed-direct" href="#">Открыть турнир напрямую</a>
+</main>
+</template>
 <script>
   // Любой адрес вида /tyrnir-17-11-2026 открывает созданный турнир
   var EXEC = "https://script.google.com/macros/s/AKfycbwyY5ndFXHC8v3JwyArlJXj_LgF10CIY5P91Wabc7gTKqBATdmZSujqPGi79h4heHHQyQ/exec";
@@ -23,9 +30,11 @@
     f.dataset.src = EXEC + "?id=" + encodeURIComponent(id);
     f.title = "Турнир";
     f.setAttribute("allow", "clipboard-write");
+    document.body.appendChild(document.getElementById("embed-status-template").content.cloneNode(true));
+    document.getElementById("embed-direct").href = f.dataset.src;
     document.body.appendChild(f);
     var loader = document.createElement("script");
-    loader.src = "/embed-tournament.js?v=neon";
+    loader.src = "/embed-tournament.js?v=ready";
     document.body.appendChild(loader);
   } else {
     document.body.innerHTML = '<div class="nf">Такой страницы нет 🤷<br><br><a href="/">← На главную турнира</a></div>';
